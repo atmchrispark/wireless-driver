@@ -462,7 +462,7 @@ static void CfgScanResult(tenuScanEvent enuScanEvent, tstrNetworkInfo* pstrNetwo
 							{
 // --> chris.park test code 			
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 18, 0)
-								bss = cfg80211_inform_bss(wiphy, channel, , CFG80211_BSS_FTYPE_UNKNOWN,  pstrNetworkInfo->au8bssid, pstrNetworkInfo->u64Tsf, pstrNetworkInfo->u16CapInfo,
+								bss = cfg80211_inform_bss(wiphy, channel, CFG80211_BSS_FTYPE_UNKNOWN, pstrNetworkInfo->au8bssid, pstrNetworkInfo->u64Tsf, pstrNetworkInfo->u16CapInfo,
 											pstrNetworkInfo->u16BeaconPeriod, (const u8*)pstrNetworkInfo->pu8IEs,
 											(size_t)pstrNetworkInfo->u16IEsLen, (((WILC_Sint32)pstrNetworkInfo->s8rssi) * 100), GFP_KERNEL);
 #else
